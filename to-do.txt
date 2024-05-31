@@ -1,7 +1,3 @@
-stick buttons - linkedin | Github | Start button
+Dark Theme
 
-sections in navbar
-
-hamburguer menu for mobile
-
-download cv button
+English support
