@@ -101,6 +101,16 @@ const Navbar = () => {
           Projetos
         </Link>
         <Link
+          to="formation"
+          smooth={true}
+          duration={500}
+          offset={-navbarHeight}
+          className="cursor-pointer text-2xl text-neutral-800 hover:bg-gradient-to-r from-cyan-600 to-purple-700 hover:bg-clip-text hover:text-transparent my-6"
+          onClick={handleLinkClick}
+        >
+          Formação
+        </Link>
+        <Link
           to="contact"
           smooth={true}
           duration={500}
@@ -161,6 +171,15 @@ const Navbar = () => {
           className="cursor-pointer text-neutral-600 hover:bg-gradient-to-r from-cyan-600 to-purple-700 hover:bg-clip-text hover:text-transparent"
         >
           Projetos
+        </Link>
+        <Link
+          to="formation"
+          smooth={true}
+          duration={500}
+          offset={-navbarHeight}
+          className="cursor-pointer text-neutral-600 hover:bg-gradient-to-r from-cyan-600 to-purple-700 hover:bg-clip-text hover:text-transparent"
+        >
+          Formação
         </Link>
         <Link
           to="contact"

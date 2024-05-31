@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Technologies from "./components/Technologies";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Formation from "./components/Formation";
 import Contact from "./components/Contact";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect } from "react";
@@ -38,6 +39,9 @@ export default function App() {
         </div>
         <div id="projects">
           <Projects />
+        </div>
+        <div id="formation">
+          <Formation />
         </div>
         <div id="contact">
           <Contact />

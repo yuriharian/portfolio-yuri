@@ -57,6 +57,33 @@ export const PROJECTS = [
   },
 ];
 
+export const FORMARTION = [
+  {
+    year: "Julho 2023 - Janeiro 2026",
+    course: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+    company: "UniProjeção",
+    tier: "Superior",
+  },
+  {
+    year: "2023 - 2024",
+    course: "Desenvolvimento Web Completo",
+    company: "Jorge Santa Ana / Jamilton Damasceno",
+    tier: "Curso",
+  },
+  {
+    year: "2023 - 2024",
+    course: "Excel do Básico ao Avançado, Macro e VBA + Power BI",
+    company: "Clevison Santos",
+    tier: "Curso",
+  },
+  {
+    year: "2020 - 2022",
+    course: "Desenvolvedor Full Stack Master",
+    company: "danki.code",
+    tier: "Curso",
+  },
+];
+
 export const CONTACT = {
   linkedIn: "linkedin.com/in/yuri-harian",
   phoneNo: "+55 (61) 98222-2582",
