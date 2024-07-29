@@ -120,14 +120,26 @@ const Navbar = () => {
         >
           Contato
         </Link>
-        <FaGithub
-          className="text-4xl text-neutral-700 hover:text-neutral-950 my-6 cursor-pointer"
-          onClick={handleLinkClick}
-        />
-        <FaLinkedin
-          className="text-4xl text-neutral-700 hover:text-neutral-950 my-6 cursor-pointer"
-          onClick={handleLinkClick}
-        />
+        <a
+          href="https://github.com/yuriharian"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub
+            className="text-4xl text-neutral-700 hover:text-neutral-950 my-6 cursor-pointer"
+            onClick={handleLinkClick}
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yuri-harian/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin
+            className="text-4xl text-neutral-700 hover:text-neutral-950 my-6 cursor-pointer"
+            onClick={handleLinkClick}
+          />
+        </a>
         <button
           className="absolute top-4 right-4 text-4xl text-neutral-700 hover:text-neutral-950"
           onClick={toggleMenu}
