@@ -43,7 +43,7 @@ export const PROJECTS = [
     description:
       "Um site de portfólio pessoal que mostra projetos, habilidades e informações de contato. Criado com React.js e Tailwind CSS.",
     technologies: ["React.js", "Tailwind CSS", "Framer Motion", "Vite"],
-    source: "",
+    source: "https://github.com/yuriharian/portfolio-yuri",
     deploy: "",
   },
   {
