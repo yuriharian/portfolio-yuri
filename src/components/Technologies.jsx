@@ -17,6 +17,7 @@ const Technologies = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: -30, opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="mb-6 lg:mb-8 text-center text-4xl"
       >
         Tecnologias
@@ -25,6 +26,7 @@ const Technologies = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: -60, opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="mb-8 text-center"
       >
         {TECHS}
@@ -34,6 +36,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-orange-600 hover:bg-orange-600 hover:text-neutral-100"
         >
           <FaHtml5 className="text-6xl" />
@@ -43,6 +46,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-blue-500 hover:bg-blue-500 hover:text-neutral-100"
         >
           <FaCss3Alt className="text-6xl" />
@@ -52,6 +56,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-yellow-400 hover:bg-yellow-400 hover:text-neutral-100"
         >
           <FaJsSquare className="text-6xl" />
@@ -61,6 +66,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-cyan-500 hover:bg-cyan-500 hover:text-neutral-100"
         >
           <FaReact className="text-6xl" />
@@ -70,6 +76,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 1.1 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-cyan-600 hover:bg-cyan-600 hover:text-neutral-100"
         >
           <RiTailwindCssFill className="text-6xl" />
@@ -79,6 +86,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-violet-700 hover:bg-violet-700 hover:text-neutral-100"
         >
           <TbBrandFramerMotion className="text-6xl" />
@@ -88,6 +96,7 @@ const Technologies = () => {
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
+          viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-red-600 hover:bg-red-600 hover:text-neutral-100"
         >
           <FaGitAlt className="text-6xl" />

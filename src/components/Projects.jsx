@@ -16,6 +16,7 @@ const Projects = () => {
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: -100, opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className="w-full lg:w-1/3 xl:w-1/4 flex justify-center lg:justify-start"
             >
               <img
@@ -30,6 +31,7 @@ const Projects = () => {
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: 100, opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className="w-full max-w-l lg:w-3/4"
             >
               <h6 className="mb-2 font-semibold">{project.title}</h6>

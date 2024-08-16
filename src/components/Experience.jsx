@@ -8,6 +8,7 @@ const Experience = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: -30, opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="mb-8 text-center text-4xl"
       >
         Experiência
@@ -19,6 +20,7 @@ const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: -100, opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className="w-full lg:w-1/4 "
             >
               <p className="mb-2 font-extrabold text-md text-neutral-700">
@@ -29,6 +31,7 @@ const Experience = () => {
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: 100, opacity: 0 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className="w-full max-w-l lg:w-3/4"
             >
               <h6 className="mb-2 font-semibold">

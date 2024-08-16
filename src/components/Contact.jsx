@@ -8,6 +8,7 @@ const Contact = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: -30, opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="mb-8 text-center text-4xl"
       >
         Contatos
@@ -16,6 +17,7 @@ const Contact = () => {
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: 30, opacity: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="text-center tracking-tighter"
       >
         <div className="flex flex-col items-center space-y-4">
