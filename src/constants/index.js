@@ -13,8 +13,8 @@ export const EXPERIENCES = [
     year: "2024 - Atualmente",
     role: "Desenvolvedor de Software",
     company: "Grupo Tesoura de Ouro",
-    description: `Desenvolvi uma dashboard para a gestão e acompanhamento das atividades dentro de cada filial. O projeto foi feito utilizando React.js, TypeScript e GraphQL.`,
-    technologies: ["React.js", "TypeScript", "GraphQL", "Refine"],
+    description: `Desenvolvi uma interface para o controle do estoque para impulsionar a gestão e acompanhamento de mercadoria dentro da empresa. O projeto foi feito utilizando React.js, Node.js, Tailwind CSS e Cloudinary.`,
+    technologies: ["React.js", "Node.js", "Cloudinary", "MySQL"],
   },
 ];
 
@@ -47,11 +47,11 @@ export const PROJECTS = [
     deploy: "",
   },
   {
-    title: "Dashboard GTO",
+    title: "Inventário Dinâmico",
     image: project4,
     description:
-      "Projeto realizado utilizando React.js, TypeScript e GraphQL. Se trata de uma Dashboard para administração de uma empresa com diversos recursos.",
-    technologies: ["React", "TypeScript", "GraphQL"],
+      "Projeto realizado utilizando React.js. Se trata de uma interface para gerenciamento do estoque de uma empresa.",
+    technologies: ["React", "Cloudinary", "MySQL"],
     source: "",
     deploy: "",
   },
@@ -65,19 +65,31 @@ export const FORMARTION = [
     tier: "Superior",
   },
   {
-    year: "2023 - 2024",
+    year: "2024",
+    course: "Python 3 do básico ao avançado",
+    company: "Luiz Otávio Miranda / Tales Calogi Malaquias",
+    tier: "Curso",
+  },
+  {
+    year: "2024",
+    course: "C# Completo Programação Orientada a Objetos",
+    company: "Nelio Alves",
+    tier: "Curso",
+  },
+  {
+    year: "2024",
     course: "Desenvolvimento Web Completo",
     company: "Jorge Santa Ana / Jamilton Damasceno",
     tier: "Curso",
   },
   {
-    year: "2023 - 2024",
+    year: "2024",
     course: "Excel do Básico ao Avançado, Macro e VBA + Power BI",
     company: "Clevison Santos",
     tier: "Curso",
   },
   {
-    year: "2020 - 2022",
+    year: "2022",
     course: "Desenvolvedor Full Stack Master",
     company: "danki.code",
     tier: "Curso",
