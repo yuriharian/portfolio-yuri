@@ -6,16 +6,9 @@ import Projects from "./components/Projects";
 import Formation from "./components/Formation";
 import Contact from "./components/Contact";
 import { FaArrowUp } from "react-icons/fa";
-import { useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
 
 export default function App() {
-  useEffect(() => {
-    const navbarElement = document.getElementById("navbar");
-    if (navbarElement) {
-    }
-  }, []);
-
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
