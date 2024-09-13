@@ -10,11 +10,11 @@ export const TECHS =
 
 export const EXPERIENCES = [
   {
-    year: "2024 - Atualmente",
-    role: "Desenvolvedor de Software",
+    year: "2021 - Atualmente",
+    role: "Estoquista",
     company: "Grupo Tesoura de Ouro",
-    description: `Desenvolvi uma interface para o controle do estoque para impulsionar a gestão e acompanhamento de mercadoria dentro da empresa. O projeto foi feito utilizando React.js, Node.js, Tailwind CSS e Cloudinary.`,
-    technologies: ["React.js", "Node.js", "Cloudinary", "MySQL"],
+    description: `Atuo no gerenciamento de estoque e projetos, assegurando precisão e eficiência no fluxo de materiais. Sou responsável pela organização, layout e padronização do estoque, otimizando o uso do espaço e facilitando a localização dos itens. Também desenvolvo planilhas de controle que monitoram estoques e indicadores de qualidade, implementando melhorias contínuas nos processos para garantir um funcionamento mais eficaz.`,
+    technologies: [],
   },
 ];
 
@@ -47,11 +47,11 @@ export const PROJECTS = [
     deploy: "",
   },
   {
-    title: "Inventário Dinâmico",
+    title: "Dashboard",
     image: project4,
     description:
-      "Projeto realizado utilizando React.js. Se trata de uma interface para gerenciamento do estoque de uma empresa.",
-    technologies: ["React", "Cloudinary", "MySQL"],
+      "Projeto realizado utilizando React.js, TypeScript e GraphQL. Se trata de uma Dashboard para administração de uma empresa com diversos recursos.",
+    technologies: ["React", "TypeScript", "GraphQL"],
     source: "",
     deploy: "",
   },

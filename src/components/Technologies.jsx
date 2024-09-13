@@ -3,9 +3,11 @@ import {
   FaCss3Alt,
   FaJsSquare,
   FaReact,
+  FaPython,
   FaGitAlt,
 } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { SiCsharp } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { TECHS } from "../constants";
@@ -42,6 +44,7 @@ const Technologies = () => {
           <FaHtml5 className="text-6xl" />
           <p className="mt-2 text-center">HTML</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
@@ -52,6 +55,7 @@ const Technologies = () => {
           <FaCss3Alt className="text-6xl" />
           <p className="mt-2 text-center">CSS</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
@@ -62,6 +66,7 @@ const Technologies = () => {
           <FaJsSquare className="text-6xl" />
           <p className="mt-2 text-center">JavaScript</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
@@ -72,6 +77,7 @@ const Technologies = () => {
           <FaReact className="text-6xl" />
           <p className="mt-2 text-center">React.js</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
@@ -82,20 +88,44 @@ const Technologies = () => {
           <RiTailwindCssFill className="text-6xl" />
           <p className="mt-2 text-center">Tailwind</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-blue-600 hover:bg-blue-600 hover:text-yellow-300"
+        >
+          <FaPython className="text-6xl" />
+          <p className="mt-2 text-center">Python</p>
+        </motion.div>
+
+        <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-purple-600 hover:bg-purple-600 hover:text-neutral-100"
+        >
+          <SiCsharp className="text-6xl" />
+          <p className="mt-2 text-center">C#</p>
+        </motion.div>
+
+        <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
+          transition={{ duration: 1, delay: 1.7 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-violet-700 hover:bg-violet-700 hover:text-neutral-100"
         >
           <TbBrandFramerMotion className="text-6xl" />
           <p className="mt-2 text-center">Motion</p>
         </motion.div>
+
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 1.9 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-neutral-500 p-2 text-red-600 hover:bg-red-600 hover:text-neutral-100"
         >

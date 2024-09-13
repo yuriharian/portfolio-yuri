@@ -15,7 +15,7 @@ const container = (delay) => ({
 const Hero = () => {
   const handleDownload = () => {
     const pdfPath =
-      "https://drive.google.com/file/d/15sRvaC9vjMDZc1r9MBFV-Maam01YdjpG/view?usp=sharing";
+      "https://drive.google.com/file/d/1TfGZ7zxlcpUZvKBZHRI6Em4YcOF5Fre3/view?usp=drive_link";
     window.open(pdfPath, "_blank");
   };
 
