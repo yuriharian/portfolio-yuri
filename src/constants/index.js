@@ -4,14 +4,14 @@ import project3 from "../assets/projects/project-3.png";
 import project4 from "../assets/projects/project-4.png";
 import project5 from "../assets/projects/project-5.gif";
 
-export const HERO_CONTENT = `Sou analista de projetos e cuido da gestão de estoque no Grupo Tesoura de Ouro. Atualmente, estou dedicado aos estudos no curso de Análise e Desenvolvimento de Sistemas, focando especialmente em alcançar a maestria em JavaScript e React.js. Tenho aplicado meus conhecimentos em projetos práticos que envolvem HTML, CSS, Tailwind CSS, JavaScript e React.js.`;
+export const HERO_CONTENT = `Estou dedicado aos estudos no curso de Análise e Desenvolvimento de Sistemas. Possuo prática com Front-End e estou focando meus estudos em Back-End. Tenho aplicado meus conhecimentos em projetos práticos que envolvem HTML, CSS, Tailwind CSS, JavaScript, React.js e Python. Atualmente, sou analista de projetos e cuido da gestão de estoque no Grupo Tesoura de Ouro.`;
 
 export const TECHS =
   "Essas são as tecnologias nas quais estou especializado atualmente e que constituem minhas principais habilidades de desenvolvimento:";
 
 export const EXPERIENCES = [
   {
-    year: "2021 - Atualmente",
+    year: "Nov 2021 - Atualmente",
     role: "Estoquista",
     company: "Grupo Tesoura de Ouro",
     description: `Atuo no gerenciamento de estoque e projetos, assegurando precisão e eficiência no fluxo de materiais. Sou responsável pela organização, layout e padronização do estoque, otimizando o uso do espaço e facilitando a localização dos itens. Também desenvolvo planilhas de controle que monitoram estoques e indicadores de qualidade, implementando melhorias contínuas nos processos para garantir um funcionamento mais eficaz.`,
@@ -68,7 +68,7 @@ export const PROJECTS = [
 
 export const FORMARTION = [
   {
-    year: "Julho 2023 - Janeiro 2026",
+    year: "Jul 2023 - Jan 2026",
     course: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
     company: "UniProjeção",
     tier: "Superior",
