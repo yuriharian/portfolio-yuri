@@ -1,7 +1,8 @@
 import project1 from "../assets/projects/project-1.png";
 import project2 from "../assets/projects/project-2.png";
 import project3 from "../assets/projects/project-3.png";
-import project4 from "../assets/projects/project-4.gif";
+import project4 from "../assets/projects/project-4.png";
+import project5 from "../assets/projects/project-5.gif";
 
 export const HERO_CONTENT = `Sou analista de projetos e cuido da gestão de estoque no Grupo Tesoura de Ouro. Atualmente, estou dedicado aos estudos no curso de Análise e Desenvolvimento de Sistemas, focando especialmente em alcançar a maestria em JavaScript e React.js. Tenho aplicado meus conhecimentos em projetos práticos que envolvem HTML, CSS, Tailwind CSS, JavaScript e React.js.`;
 
@@ -47,8 +48,16 @@ export const PROJECTS = [
     deploy: "",
   },
   {
-    title: "Dashboard",
+    title: "EZ QR Code",
     image: project4,
+    description: "Gerador e leitor de QR Codes",
+    technologies: ["Python", "Tkinter", "Pyzbar"],
+    source: "https://github.com/yuriharian/ez_qrcode",
+    deploy: "",
+  },
+  {
+    title: "Dashboard",
+    image: project5,
     description:
       "Projeto realizado utilizando React.js, TypeScript e GraphQL. Se trata de uma Dashboard para administração de uma empresa com diversos recursos.",
     technologies: ["React", "TypeScript", "GraphQL"],
