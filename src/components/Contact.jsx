@@ -11,7 +11,7 @@ const Contact = () => {
         viewport={{ once: true }}
         className="mb-8 text-center text-4xl"
       >
-        Contatos
+        Contato
       </motion.h1>
       <motion.div
         whileInView={{ y: 0, opacity: 1 }}

@@ -59,7 +59,7 @@ export const PROJECTS = [
     title: "Dashboard",
     image: project5,
     description:
-      "Projeto realizado utilizando React.js, TypeScript e GraphQL. Se trata de uma Dashboard para administração de uma empresa com diversos recursos.",
+      "Projeto sendo desenvolvido utilizando React.js, TypeScript e GraphQL. Se trata de uma Dashboard para administração de uma empresa com diversos recursos.",
     technologies: ["React", "TypeScript", "GraphQL"],
     source: "",
     deploy: "",
