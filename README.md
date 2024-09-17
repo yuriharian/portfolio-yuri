@@ -1,4 +1,4 @@
-# Portfólio de Yuri Harian
+# Portfólio Yuri Harian
 
 Este é o repositório do meu portfólio pessoal, onde apresento meus projetos, habilidades e informações de contato. Este projeto foi desenvolvido com o intuito de mostrar meu progresso como desenvolvedor Front-end e está em constante atualização.
 
