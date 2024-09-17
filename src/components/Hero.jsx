@@ -30,9 +30,9 @@ const Hero = () => {
               animate="visible"
               className="text-4xl font-bold pb-4 lg:pb-10 tracking-tight lg:mt-16 lg:text-6xl"
             >
-              Olá👋
+              Olá!👋
               <br />
-              Meu nome é Yuri Harian!
+              Meu nome é Yuri Harian
             </motion.h1>
             <motion.span
               variants={container(0.8)}
