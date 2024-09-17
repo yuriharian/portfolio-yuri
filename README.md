@@ -23,7 +23,10 @@ Este é o repositório do meu portfólio pessoal, onde apresento meus projetos, 
   
 ## Screenshot
 
-![Screenshot do Portfólio](./src/assets/projects/project-3.png)
+<p align="center">
+  <img src="./src/assets/projects/project-3.png" alt="Screenshot do Portfólio" height="300px">
+  <img src="./src/assets/projects/project-3-mobile.png" alt="Screenshot Mobile" height="300px">
+</p>
 
 ---
 
