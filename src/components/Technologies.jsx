@@ -161,7 +161,7 @@ const Technologies = () => {
           <p className="mt-2 text-center">Tailwind</p>
         </motion.div>
 
-        {/* Framer Motion */}
+        {/* Motion */}
         <motion.div
           whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 100, opacity: 0 }}
