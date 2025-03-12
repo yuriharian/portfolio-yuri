@@ -14,6 +14,7 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiTypescript,
+  SiNestjs,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { motion } from "framer-motion";
@@ -147,6 +148,18 @@ const Technologies = () => {
         >
           <SiNextdotjs className="text-6xl" />
           <p className="mt-2 text-center">Next.js</p>
+        </motion.div>
+
+        {/* NestJS */}
+        <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
+          transition={{ duration: 1, delay: 1.9 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center w-32 h-32 rounded-2xl border-2 border-rose-600 p-2 text-rose-600 hover:bg-rose-600 hover:text-neutral-100"
+        >
+          <SiNestjs className="text-6xl" />
+          <p className="mt-2 text-center">NestJS</p>
         </motion.div>
 
         {/* Tailwind */}
