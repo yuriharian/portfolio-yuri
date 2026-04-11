@@ -24,7 +24,8 @@ import { GrMysql } from "react-icons/gr";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { motion } from "framer-motion";
-import { TECHS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const FRONTEND_TOOLS = [
   { name: "HTML", icon: FaHtml5, color: "#f97316" },
@@ -56,43 +57,52 @@ const Technologies = () => {
   const [selectedFront, setSelectedFront] = React.useState(null);
   const [selectedBack, setSelectedBack] = React.useState(null);
 
-  const renderCard = (title, techs, selected, setSelected) => {
-    const bgColor = selected ? selected.color : "rgba(255,255,255,0.8)";
+  const { language } = useLanguage();
+  const t = translations[language] || translations.pt;
 
+  const getSafeColor = (tech) => {
+    if (tech.name === "Next.js") {
+      return "text-neutral-900 dark:text-white";
+    }
+
+    if (tech.name === "Express") {
+      return "text-neutral-700 dark:text-neutral-200";
+    }
+
+    return "";
+  };
+
+  const renderCard = (title, techs, selected, setSelected) => {
     return (
-      <div
-        className="flex-1 flex flex-col items-center justify-center rounded-3xl shadow-xl mx-2 mb-8 p-8 min-h-[380px] border border-white/60 backdrop-blur-sm"
-        style={{
-          background: bgColor,
-          transition: "all 0.4s ease",
-        }}
-      >
-        <h2
-          className="text-2xl md:text-3xl font-bold mb-6 text-center tracking-tight"
-          style={{ color: selected ? "#fff" : undefined }}
-        >
+      <div className="flex-1 flex flex-col items-center justify-center rounded-3xl shadow-xl p-8 min-h-[380px] border-2 border-neutral-200 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl transition-all duration-500">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center tracking-tight text-neutral-900 dark:text-white">
           {title}
         </h2>
 
         {selected ? (
           <div className="flex flex-col items-center justify-center h-full">
             <selected.icon
-              className="text-[7rem] md:text-[8rem] mb-4"
+              className={`text-[7rem] md:text-[8rem] mb-4 ${getSafeColor(
+                selected,
+              )}`}
               style={{
-                color: "#fff",
+                color:
+                  selected.name !== "Next.js" && selected.name !== "Express"
+                    ? selected.color
+                    : undefined,
                 filter: "drop-shadow(0 4px 18px rgba(0,0,0,0.25))",
               }}
             />
 
-            <span className="text-2xl md:text-3xl font-bold text-white drop-shadow mb-4 text-center">
+            <span className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white drop-shadow mb-4 text-center">
               {selected.name}
             </span>
 
             <button
-              className="mt-2 px-5 py-2 rounded-xl font-semibold bg-white text-neutral-900 shadow-lg hover:scale-105 transition"
+              className="mt-2 px-5 py-2 rounded-xl font-semibold text-white btn-solid-blue"
               onClick={() => setSelected(null)}
             >
-              Voltar
+              {t.technologies.back}
             </button>
           </div>
         ) : (
@@ -100,15 +110,25 @@ const Technologies = () => {
             {techs.map((tech) => (
               <button
                 key={tech.name}
-                className="group flex flex-col items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl border-2 p-1 md:p-2 shadow-md bg-white hover:scale-110 hover:shadow-xl transition-all duration-300"
+                className="group flex flex-col items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl border-2 p-1 md:p-2 shadow-md bg-white dark:bg-stone-900 border-neutral-200 dark:border-white/10 hover:scale-110 hover:shadow-xl transition-all duration-300"
                 style={{
                   borderColor: tech.color,
-                  color: tech.color,
                 }}
                 onClick={() => setSelected(tech)}
               >
-                <tech.icon className="text-xl md:text-5xl transition-transform group-hover:scale-110" />
-                <span className="mt-1 text-xs md:mt-2 md:text-sm font-semibold text-center">
+                <tech.icon
+                  className={`text-xl md:text-5xl transition-transform group-hover:scale-110 ${getSafeColor(
+                    tech,
+                  )}`}
+                  style={{
+                    color:
+                      tech.name !== "Next.js" && tech.name !== "Express"
+                        ? tech.color
+                        : undefined,
+                  }}
+                />
+
+                <span className="mt-1 text-xs md:mt-2 md:text-sm font-semibold text-center text-neutral-800 dark:text-neutral-200">
                   {tech.name}
                 </span>
               </button>
@@ -120,15 +140,18 @@ const Technologies = () => {
   };
 
   return (
-    <section className="mt-8 md:mt-14 pb-20 border-b border-neutral-200">
+    <section
+      id="technologies"
+      className="mt-8 md:mt-14 pb-20 border-b border-neutral-200 dark:border-white/10"
+    >
       <motion.h1
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: -30, opacity: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="mb-6 text-center text-3xl md:text-5xl font-bold tracking-tight text-neutral-900"
+        className="mb-6 text-center text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white"
       >
-        Tecnologias
+        {t.technologies.title}
       </motion.h1>
 
       <motion.p
@@ -136,21 +159,21 @@ const Technologies = () => {
         initial={{ y: -40, opacity: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="mb-12 text-center max-w-4xl mx-auto text-neutral-600 leading-8"
+        className="mb-12 text-center max-w-4xl mx-auto text-neutral-600 dark:text-neutral-300 leading-8"
       >
-        {TECHS}
+        {t.technologies.description}
       </motion.p>
 
       <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8">
         {renderCard(
-          "Interfaces & Experiência",
+          t.technologies.frontendTitle,
           FRONTEND_TOOLS,
           selectedFront,
           setSelectedFront,
         )}
 
         {renderCard(
-          "Arquitetura, Dados & IA",
+          t.technologies.backendTitle,
           BACKEND_DB_AI,
           selectedBack,
           setSelectedBack,
