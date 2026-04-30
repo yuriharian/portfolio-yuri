@@ -73,6 +73,8 @@ export const translations = {
       title: "Projetos",
       description:
         "Projetos que representam minha evolução em front-end, back-end, automação e IA aplicada.",
+      highlights: "Destaques",
+      more: "Mais cursos",
       code: "Código",
       viewProject: "Ver projeto",
     },
@@ -168,6 +170,8 @@ export const translations = {
       title: "Projects",
       description:
         "Projects that showcase my growth in front-end, back-end, automation and applied AI.",
+      highlights: "Highlights",
+      more: "More courses",
       code: "Code",
       viewProject: "View project",
     },
@@ -263,6 +267,8 @@ export const translations = {
       title: "Proyectos",
       description:
         "Proyectos que representan mi evolución en front-end, back-end, automatización e IA aplicada.",
+      highlights: "Destacados",
+      more: "Más cursos",
       code: "Código",
       viewProject: "Ver proyecto",
     },

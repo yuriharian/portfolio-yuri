@@ -10,8 +10,9 @@ const Formation = () => {
   const t = translations[language] || translations.pt;
   const formation = CONTENT[language]?.formation || CONTENT.pt.formation;
 
-  const higher = formation.filter((_, index) => index === 0);
-  const courses = formation.filter((_, index) => index > 0);
+  const higher = formation.slice(0, 1);
+  const featured = formation.slice(1, 4);
+  const courses = formation.slice(4);
 
   return (
     <section
@@ -69,21 +70,24 @@ const Formation = () => {
           </motion.div>
         ))}
 
-        {courses.length > 0 && (
+        {featured.length > 0 && (
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-neutral-900 dark:text-white text-center">
-              {t.formation.specialization}
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+                {t.projects?.highlights || "Destaques"}
+              </span>
+              <div className="flex-1 h-px bg-neutral-200 dark:bg-white/10" />
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courses.map((course, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {featured.map((course, i) => (
                 <motion.div
-                  key={`course-${i}`}
+                  key={`featured-course-${i}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   viewport={{ once: true }}
-                  className="group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  className="group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
                 >
                   <div className="flex items-start gap-3 mb-4">
                     <FiBookOpen className="text-xl text-blue-500 mt-1" />
@@ -102,6 +106,45 @@ const Formation = () => {
                 </motion.div>
               ))}
             </div>
+
+            {courses.length > 0 && (
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+                    {t.projects?.more || "Mais cursos"}
+                  </span>
+                  <div className="flex-1 h-px bg-neutral-200 dark:bg-white/10" />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {courses.map((course, i) => (
+                    <motion.div
+                      key={`course-${i}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.04 }}
+                      viewport={{ once: true }}
+                      className="group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
+                    >
+                      <div className="flex items-start gap-3 mb-4">
+                        <FiBookOpen className="text-xl text-blue-500 mt-1" />
+                        <div>
+                          <p className="text-sm text-blue-600 dark:text-blue-400 font-bold">
+                            {course.year}
+                          </p>
+                          <h4 className="mt-1 font-bold text-lg text-neutral-900 dark:text-white">
+                            {course.course}
+                          </h4>
+                          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                            {course.company}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>

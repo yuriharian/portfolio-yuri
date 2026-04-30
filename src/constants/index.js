@@ -30,6 +30,24 @@ export const CONTENT = {
 
     projects: [
       {
+        title: "Smart Catalog",
+        placeholder: true,
+        description:
+          "Projeto atual em desenvolvimento. Em breve mais detalhes.",
+        technologies: ["React", "Python", "IA"],
+        source: "",
+        deploy: "",
+      },
+      {
+        title: "VoiceAgent", // troque pelo nome final quando decidir
+        placeholder: true,
+        description:
+          "Agente de IA controlado por voz e chat para automação do PC via atalho — sua Alexa pessoal open source.",
+        technologies: ["Python", "OpenClaw", "LLM", "Voz"],
+        source: "",
+        deploy: "",
+      },
+      {
         title: "Landing Page Sushi Shop",
         image: project1,
         description:
@@ -92,6 +110,37 @@ export const CONTENT = {
         company: "UniProjeção",
         tier: "Superior",
       },
+      // Destaques
+      {
+        year: "2024",
+        course: "Python 3 Completo",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Python avançado, orientação a objetos, automações e aplicações práticas.",
+        tags: ["Python"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Engenheiro de IA",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Conceitos e práticas para engenharia de modelos de IA e LLMs.",
+        tags: ["IA", "Modelos", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Governança de TI",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Práticas de governança, compliance e gestão de TI.",
+        tags: ["Governança", "TI"],
+        link: "",
+      },
+      // Mais cursos
       {
         year: "2026",
         course: "GitLab CI/CD + DevOps",
@@ -100,25 +149,6 @@ export const CONTENT = {
         description:
           "Pipelines, integração contínua, deploy automatizado e fundamentos DevOps.",
         tags: ["CI/CD", "DevOps", "GitLab"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "Docker",
-        company: "Udemy",
-        tier: "Curso",
-        description: "Containers, criação de imagens e ambientes isolados.",
-        tags: ["Docker", "Containers"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "C# Completo + Programação Orientada a Objetos",
-        company: "Udemy",
-        tier: "Curso",
-        description:
-          "Fundamentos sólidos de C#, POO, coleções, LINQ, APIs e boas práticas para desenvolvimento backend.",
-        tags: ["C#", ".NET", "POO", "APIs"],
         link: "",
       },
       {
@@ -141,13 +171,50 @@ export const CONTENT = {
         link: "",
       },
       {
-        year: "2024",
-        course: "Python 3 Completo",
+        year: "2026",
+        course: "C# Completo + Programação Orientada a Objetos",
         company: "Udemy",
         tier: "Curso",
         description:
-          "Python avançado, orientação a objetos, automações e aplicações práticas.",
-        tags: ["Python"],
+          "Fundamentos sólidos de C#, POO, coleções, LINQ, APIs e boas práticas para desenvolvimento backend.",
+        tags: ["C#", ".NET", "POO", "APIs"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Docker",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Containers, criação de imagens e ambientes isolados.",
+        tags: ["Docker", "Containers"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "LangChain + LangGraph",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Ferramentas e patterns para aplicações baseadas em LLMs.",
+        tags: ["LangChain", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Liderança e Gestão de Pessoas",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Habilidades de liderança, comunicação e gestão de times.",
+        tags: ["Liderança", "Gestão"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Comunicação Assertiva",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Técnicas de comunicação clara e efetiva no ambiente profissional.",
+        tags: ["Comunicação"],
         link: "",
       },
     ],
@@ -186,6 +253,24 @@ export const CONTENT = {
     ],
 
     projects: [
+      {
+        title: "Smart Catalog",
+        placeholder: true,
+        description:
+          "Project currently in development. More details coming soon.",
+        technologies: ["React", "Python", "AI"],
+        source: "",
+        deploy: "",
+      },
+      {
+        title: "VoiceAgent",
+        placeholder: true,
+        description:
+          "AI agent controlled by voice and chat to automate your PC with a shortcut — your personal open source Alexa.",
+        technologies: ["Python", "OpenClaw", "LLM", "Voice"],
+        source: "",
+        deploy: "",
+      },
       {
         title: "Sushi Shop Landing Page",
         image: project1,
@@ -249,6 +334,37 @@ export const CONTENT = {
         company: "UniProjeção",
         tier: "Degree",
       },
+      // Highlights
+      {
+        year: "2024",
+        course: "Complete Python 3",
+        company: "Udemy",
+        tier: "Course",
+        description:
+          "Advanced Python, object-oriented programming, automations and practical applications.",
+        tags: ["Python"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "AI Engineer",
+        company: "Udemy",
+        tier: "Course",
+        description:
+          "Concepts and practices for engineering AI models and LLMs.",
+        tags: ["AI", "Models", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "IT Governance",
+        company: "Udemy",
+        tier: "Course",
+        description: "Governance, compliance and IT management practices.",
+        tags: ["Governance", "IT"],
+        link: "",
+      },
+      // More courses
       {
         year: "2026",
         course: "GitLab CI/CD + DevOps",
@@ -257,25 +373,6 @@ export const CONTENT = {
         description:
           "Pipelines, continuous integration, automated deploy and DevOps fundamentals.",
         tags: ["CI/CD", "DevOps", "GitLab"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "Docker",
-        company: "Udemy",
-        tier: "Course",
-        description: "Containers, image creation and isolated environments.",
-        tags: ["Docker", "Containers"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "Complete C# + Object Oriented Programming",
-        company: "Udemy",
-        tier: "Course",
-        description:
-          "Solid fundamentals of C#, OOP, collections, LINQ, APIs and backend best practices.",
-        tags: ["C#", ".NET", "OOP", "APIs"],
         link: "",
       },
       {
@@ -298,13 +395,50 @@ export const CONTENT = {
         link: "",
       },
       {
-        year: "2024",
-        course: "Complete Python 3",
+        year: "2026",
+        course: "Complete C# + Object Oriented Programming",
         company: "Udemy",
         tier: "Course",
         description:
-          "Advanced Python, object-oriented programming, automations and practical applications.",
-        tags: ["Python"],
+          "Solid fundamentals of C#, OOP, collections, LINQ, APIs and backend best practices.",
+        tags: ["C#", ".NET", "OOP", "APIs"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Docker",
+        company: "Udemy",
+        tier: "Course",
+        description: "Containers, image creation and isolated environments.",
+        tags: ["Docker", "Containers"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "LangChain + LangGraph",
+        company: "Udemy",
+        tier: "Course",
+        description: "Tools and patterns for LLM-based applications.",
+        tags: ["LangChain", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Leadership and People Management",
+        company: "Udemy",
+        tier: "Course",
+        description: "Leadership skills, communication and team management.",
+        tags: ["Leadership", "Management"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Assertive Communication",
+        company: "Udemy",
+        tier: "Course",
+        description:
+          "Techniques for clear and effective communication in professional settings.",
+        tags: ["Communication"],
         link: "",
       },
     ],
@@ -343,6 +477,24 @@ export const CONTENT = {
     ],
 
     projects: [
+      {
+        title: "Smart Catalog",
+        placeholder: true,
+        description:
+          "Proyecto actualmente en desarrollo. Más detalles próximamente.",
+        technologies: ["React", "Python", "IA"],
+        source: "",
+        deploy: "",
+      },
+      {
+        title: "VoiceAgent",
+        placeholder: true,
+        description:
+          "Agente de IA controlado por voz y chat para automatizar el PC mediante un atajo — tu Alexa personal open source.",
+        technologies: ["Python", "OpenClaw", "LLM", "Voz"],
+        source: "",
+        deploy: "",
+      },
       {
         title: "Landing Page Sushi Shop",
         image: project1,
@@ -406,6 +558,37 @@ export const CONTENT = {
         company: "UniProjeção",
         tier: "Superior",
       },
+      // Destacados
+      {
+        year: "2024",
+        course: "Python 3 Completo",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Python avanzado, programación orientada a objetos, automatizaciones y aplicaciones prácticas.",
+        tags: ["Python"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Ingeniero de IA",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Conceptos y prácticas para la ingeniería de modelos de IA y LLMs.",
+        tags: ["IA", "Modelos", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Gobernanza de TI",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Prácticas de gobernanza, cumplimiento y gestión de TI.",
+        tags: ["Gobernanza", "TI"],
+        link: "",
+      },
+      // Más cursos
       {
         year: "2026",
         course: "GitLab CI/CD + DevOps",
@@ -414,25 +597,6 @@ export const CONTENT = {
         description:
           "Pipelines, integración continua, despliegue automatizado y fundamentos de DevOps.",
         tags: ["CI/CD", "DevOps", "GitLab"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "Docker",
-        company: "Udemy",
-        tier: "Curso",
-        description: "Contenedores, creación de imágenes y entornos aislados.",
-        tags: ["Docker", "Contenedores"],
-        link: "",
-      },
-      {
-        year: "2026",
-        course: "C# Completo + Programación Orientada a Objetos",
-        company: "Udemy",
-        tier: "Curso",
-        description:
-          "Fundamentos sólidos de C#, POO, colecciones, LINQ, APIs y buenas prácticas para desarrollo backend.",
-        tags: ["C#", ".NET", "POO", "APIs"],
         link: "",
       },
       {
@@ -455,13 +619,52 @@ export const CONTENT = {
         link: "",
       },
       {
-        year: "2024",
-        course: "Python 3 Completo",
+        year: "2026",
+        course: "C# Completo + Programación Orientada a Objetos",
         company: "Udemy",
         tier: "Curso",
         description:
-          "Python avanzado, programación orientada a objetos, automatizaciones y aplicaciones prácticas.",
-        tags: ["Python"],
+          "Fundamentos sólidos de C#, POO, colecciones, LINQ, APIs y buenas prácticas para desarrollo backend.",
+        tags: ["C#", ".NET", "POO", "APIs"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Docker",
+        company: "Udemy",
+        tier: "Curso",
+        description: "Contenedores, creación de imágenes y entornos aislados.",
+        tags: ["Docker", "Contenedores"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "LangChain + LangGraph",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Herramientas y patrones para aplicaciones basadas en LLM.",
+        tags: ["LangChain", "LLM"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Liderazgo y Gestión de Personas",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Habilidades de liderazgo, comunicación y gestión de equipos.",
+        tags: ["Liderazgo", "Gestión"],
+        link: "",
+      },
+      {
+        year: "2026",
+        course: "Comunicación Asertiva",
+        company: "Udemy",
+        tier: "Curso",
+        description:
+          "Técnicas de comunicación clara y efectiva en el entorno profesional.",
+        tags: ["Comunicación"],
         link: "",
       },
     ],

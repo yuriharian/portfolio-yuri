@@ -8,6 +8,13 @@ import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
+// Mapa de idiomas com bandeiras e rótulos
+const LANGUAGES = [
+  { code: "pt", flag: "https://flagcdn.com/w40/br.png", label: "Português" },
+  { code: "en", flag: "https://flagcdn.com/w40/us.png", label: "English" },
+  { code: "es", flag: "https://flagcdn.com/w40/es.png", label: "Español" },
+];
+
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
@@ -65,6 +72,10 @@ const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language] || translations.pt;
 
+  // Idioma atual para exibir no botão
+  const currentLang =
+    LANGUAGES.find((l) => l.code === language) || LANGUAGES[0];
+
   const menuItems = [
     { id: "hero", label: t.menu.home },
     { id: "Journey", label: t.menu.journey },
@@ -74,8 +85,10 @@ const Navbar = () => {
     { id: "formation", label: t.menu.formation },
     { id: "contact", label: t.menu.contact },
   ];
+
   const desktopBtn =
     "p-2 rounded-full border-neutral-200 dark:border-zinc-700 bg-neutral-100 dark:bg-zinc-800 hover:scale-105 transition flex items-center justify-center text-neutral-700 dark:text-zinc-200";
+
   useEffect(() => {
     const updateNavbarHeight = () => {
       const navbar = document.getElementById("navbar");
@@ -124,26 +137,41 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} mobile />
 
+            {/* Seletor de idioma — mobile */}
             <div className="relative" ref={langMenuRef}>
               <button
                 onClick={() => setLangMenuOpen((s) => !s)}
-                className="px-3 py-2 rounded-xl bg-neutral-100 dark:bg-zinc-800 text-sm font-bold text-neutral-800 dark:text-zinc-100"
+                title={currentLang.label}
+                aria-label={currentLang.label}
+                className="px-3 py-2 rounded-xl bg-neutral-100 dark:bg-zinc-800 flex items-center justify-center"
               >
-                {language.toUpperCase()}
+                <img
+                  src={currentLang.flag}
+                  alt={currentLang.label}
+                  className="w-6 h-auto rounded-sm"
+                />
               </button>
 
               {langMenuOpen && (
-                <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-zinc-800 rounded-md shadow-lg z-50 py-1">
-                  {["pt", "en", "es"].map((l) => (
+                <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-zinc-800 rounded-md shadow-lg z-50 py-1">
+                  {LANGUAGES.map((l) => (
                     <button
-                      key={l}
+                      key={l.code}
                       onClick={() => {
-                        toggleLanguage(l);
+                        toggleLanguage(l.code);
                         setLangMenuOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2 text-sm ${language === l ? "font-bold" : ""} text-neutral-700 dark:text-zinc-200 hover:bg-neutral-100 dark:hover:bg-zinc-700`}
+                      title={l.label}
+                      aria-label={l.label}
+                      className={`w-full text-left px-3 py-2 flex items-center gap-2 ${
+                        language === l.code ? "opacity-100" : "opacity-50"
+                      } hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-zinc-700`}
                     >
-                      {l.toUpperCase()}
+                      <img
+                        src={l.flag}
+                        alt={l.label}
+                        className="w-6 h-auto rounded-sm"
+                      />
                     </button>
                   ))}
                 </div>
@@ -195,28 +223,41 @@ const Navbar = () => {
 
               <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
 
+              {/* Seletor de idioma — desktop */}
               <div className="relative" ref={langMenuRefDesktop}>
                 <button
                   onClick={() => setLangMenuOpenDesktop((s) => !s)}
-                  className={`${desktopBtn} w-10 h-10 flex items-center justify-center`}
+                  title={currentLang.label}
+                  aria-label={currentLang.label}
+                  className={`${desktopBtn} w-10 h-10`}
                 >
-                  <span className="text-sm font-bold">
-                    {language.toUpperCase()}
-                  </span>
+                  <img
+                    src={currentLang.flag}
+                    alt={currentLang.label}
+                    className="w-6 h-auto rounded-sm"
+                  />
                 </button>
 
                 {langMenuOpenDesktop && (
-                  <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-zinc-800 rounded-md shadow-lg z-50 py-1">
-                    {["pt", "en", "es"].map((l) => (
+                  <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-zinc-800 rounded-md shadow-lg z-50 py-1">
+                    {LANGUAGES.map((l) => (
                       <button
-                        key={l}
+                        key={l.code}
                         onClick={() => {
-                          toggleLanguage(l);
+                          toggleLanguage(l.code);
                           setLangMenuOpenDesktop(false);
                         }}
-                        className={`w-full text-left px-3 py-2 text-sm ${language === l ? "font-bold" : ""} text-neutral-700 dark:text-zinc-200 hover:bg-neutral-100 dark:hover:bg-zinc-700`}
+                        title={l.label}
+                        aria-label={l.label}
+                        className={`w-full text-left px-3 py-2 flex items-center gap-2 ${
+                          language === l.code ? "opacity-100" : "opacity-50"
+                        } hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-zinc-700`}
                       >
-                        {l.toUpperCase()}
+                        <img
+                          src={l.flag}
+                          alt={l.label}
+                          className="w-6 h-auto rounded-sm"
+                        />
                       </button>
                     ))}
                   </div>
