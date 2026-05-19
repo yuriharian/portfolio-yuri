@@ -11,7 +11,7 @@ export const translations = {
     },
 
     hero: {
-      greeting: "Olá, eu sou",
+      greeting: "Olá!",
       intro: "Meu nome é",
       title: "Engenheiro Full-Stack de IA",
       description:
@@ -108,7 +108,7 @@ export const translations = {
     },
 
     hero: {
-      greeting: "Hello, I am",
+      greeting: "Hello!",
       intro: "My name is",
       title: "Full-Stack AI Engineer",
       description:
@@ -205,7 +205,7 @@ export const translations = {
     },
 
     hero: {
-      greeting: "Hola, soy",
+      greeting: "¡Hola!",
       intro: "Mi nombre es",
       title: "Ingeniero Full-Stack de IA",
       description:
