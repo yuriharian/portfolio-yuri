@@ -1,7 +1,7 @@
-import ProfileAvatar from "../assets/Profile_Avatar.png";
+import ProfileAvatar3 from "../assets/Profile_Avatar3.png";
 import ProfileAvatar2 from "../assets/Profile_Avatar2.png";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TfiDownload } from "react-icons/tfi";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
@@ -10,9 +10,27 @@ import { CONTENT } from "../constants";
 const Hero = () => {
   const { language } = useLanguage();
   const [flipped, setFlipped] = useState(false);
+  const intervalRef = useRef(null);
 
   const t = translations[language] || translations.pt;
   const data = CONTENT[language] || CONTENT.pt;
+
+  const startAutoFlip = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setFlipped((s) => !s);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    startAutoFlip();
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const handleAvatarClick = () => {
+    setFlipped((s) => !s);
+    startAutoFlip();
+  };
 
   const handleDownload = () => {
     const pdfPath =
@@ -83,14 +101,14 @@ const Hero = () => {
             {/* 3D flip avatar */}
             <div
               className="avatar-3d relative w-64 h-64 md:w-96 md:h-96"
-              onClick={() => setFlipped((s) => !s)}
+              onClick={handleAvatarClick}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && setFlipped((s) => !s)}
+              onKeyDown={(e) => e.key === "Enter" && handleAvatarClick()}
             >
               <div className={`avatar-3d-inner ${flipped ? "flipped" : ""}`}>
                 <img
-                  src={ProfileAvatar}
+                  src={ProfileAvatar3}
                   alt="Yuri Harian"
                   className="avatar-face front w-full h-full rounded-full shadow-2xl object-cover"
                   draggable={false}

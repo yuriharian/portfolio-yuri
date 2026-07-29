@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       greeting: "Olá!",
       intro: "Meu nome é",
-      title: "Engenheiro Full-Stack de IA",
+      title: "Desenvolvedor Full-Stack",
       description:
         "Desenvolvedor focado em criar interfaces modernas, APIs robustas, automações inteligentes e produtos orientados por IA.",
       downloadCv: "Baixar CV",
@@ -110,7 +110,7 @@ export const translations = {
     hero: {
       greeting: "Hello!",
       intro: "My name is",
-      title: "Full-Stack AI Engineer",
+      title: "Full-Stack Developer",
       description:
         "Developer focused on building modern interfaces, robust APIs, intelligent automations, and AI-driven products.",
       downloadCv: "Download CV",
@@ -207,7 +207,7 @@ export const translations = {
     hero: {
       greeting: "¡Hola!",
       intro: "Mi nombre es",
-      title: "Ingeniero Full-Stack de IA",
+      title: "Desarrollador Full-Stack",
       description:
         "Desarrollador enfocado en crear interfaces modernas, APIs robustas, automatizaciones inteligentes y productos impulsados por IA.",
       downloadCv: "Descargar CV",
