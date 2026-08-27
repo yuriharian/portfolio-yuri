@@ -4,6 +4,7 @@ import Journey from "./components/Journey";
 import Technologies from "./components/Technologies";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import CorporateProjects from "./components/CorporateProjects";
 import Formation from "./components/Formation";
 import Contact from "./components/Contact";
 import { FaArrowUp } from "react-icons/fa";
@@ -37,6 +38,9 @@ export default function App() {
         </div>
         <div id="projects">
           <Projects />
+        </div>
+        <div id="corporate-projects">
+          <CorporateProjects />
         </div>
         <div id="formation">
           <Formation />

@@ -5,6 +5,17 @@ import { useLanguage } from "../context/LanguageContext";
 import SharedCarousel from "./SharedCarousel";
 import { translations } from "../i18n/translations";
 import { useState, useRef, useCallback } from "react";
+import Badge from "./ui/badge";
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 // ─── Media: imagem ou vídeo com play on hover/tap ────────────────────────────
 const ProjectMedia = ({ project, featured = false }) => {
@@ -99,12 +110,19 @@ const ProjectCard = ({ project, t, featured = false }) => {
   const isPlaceholder = project.placeholder === true;
 
   return (
-    <div
-      className={`group flex flex-col rounded-3xl border-2 overflow-hidden h-full md:min-h-[340px] lg:min-h-[380px] transition-all duration-300
+    <motion.div
+      variants={cardVariants}
+      whileHover={
+        isPlaceholder
+          ? undefined
+          : { y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }
+      }
+      className={`group flex flex-col rounded-3xl border-2 overflow-hidden transition-shadow duration-300
+        ${featured ? "h-full md:min-h-[340px] lg:min-h-[380px]" : "h-[430px]"}
         ${
           isPlaceholder
             ? "border-dashed border-neutral-300 dark:border-white/20 bg-neutral-50/80 dark:bg-white/[0.03]"
-            : "border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:-translate-y-1"
+            : "border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl shadow-lg hover:shadow-2xl"
         }`}
     >
       {/* Mídia */}
@@ -123,14 +141,14 @@ const ProjectCard = ({ project, t, featured = false }) => {
             {project.title}
           </h3>
           {isPlaceholder && (
-            <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-400/20">
+            <Badge variant="amber" className="shrink-0 uppercase tracking-wider">
               WIP
-            </span>
+            </Badge>
           )}
         </div>
 
         <p
-          className={`leading-6 flex-grow text-sm ${isPlaceholder ? "text-neutral-400 dark:text-neutral-500 italic" : "text-neutral-600 dark:text-neutral-300"}`}
+          className={`leading-6 text-sm ${featured ? "flex-grow" : "line-clamp-4"} ${isPlaceholder ? "text-neutral-400 dark:text-neutral-500 italic" : "text-neutral-600 dark:text-neutral-300"}`}
         >
           {project.description}
         </p>
@@ -138,12 +156,7 @@ const ProjectCard = ({ project, t, featured = false }) => {
         {project.technologies?.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {project.technologies.map((tech, idx) => (
-              <span
-                key={idx}
-                className="rounded-full bg-neutral-100 dark:bg-white/10 px-2.5 py-0.5 text-xs font-medium text-neutral-700 dark:text-neutral-200"
-              >
-                {tech}
-              </span>
+              <Badge key={idx}>{tech}</Badge>
             ))}
           </div>
         )}
@@ -175,7 +188,7 @@ const ProjectCard = ({ project, t, featured = false }) => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -225,20 +238,17 @@ const Projects = () => {
           <div className="flex-1 h-px bg-neutral-200 dark:bg-white/10" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {featured.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              viewport={{ once: true }}
-              className="h-full"
-            >
-              <ProjectCard project={project} t={t} featured />
-            </motion.div>
+            <ProjectCard key={i} project={project} t={t} featured />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* ── Carrossel ── */}

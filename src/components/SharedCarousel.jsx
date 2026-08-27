@@ -2,10 +2,19 @@ import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 
-const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
+// rows=1 (padrão): rolagem contínua item a item, como nos Projetos.
+// rows>1: navegação por página, cada página é uma grade de `rows` linhas x N colunas.
+const SharedCarousel = ({
+  items = [],
+  renderItem,
+  visibleCount = 3,
+  rows = 1,
+  containerClassName = "min-h-[380px] md:min-h-[420px] lg:min-h-[460px]",
+}) => {
   const [index, setIndex] = useState(0);
   const touchStartX = useRef(null);
   const total = items.length;
+  const isPaged = rows > 1;
 
   const [actualVisible, setActualVisible] = useState(visibleCount);
 
@@ -24,7 +33,10 @@ const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
     return () => window.removeEventListener("resize", apply);
   }, [visibleCount]);
 
-  const maxIndex = Math.max(0, total - actualVisible);
+  const perPage = actualVisible * rows;
+  const maxIndex = isPaged
+    ? Math.max(0, Math.ceil(total / perPage) - 1)
+    : Math.max(0, total - actualVisible);
 
   useEffect(() => {
     setIndex((i) => Math.min(i, maxIndex));
@@ -44,7 +56,11 @@ const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
     touchStartX.current = null;
   };
 
-  const translateX = -(index * (100 / actualVisible));
+  const translateX = isPaged
+    ? -(index * 100)
+    : -(index * (100 / actualVisible));
+
+  const pagesCount = maxIndex + 1;
 
   return (
     <div className="relative">
@@ -58,7 +74,7 @@ const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
         </button>
 
         <div
-          className="flex-1 overflow-hidden min-h-[380px] md:min-h-[420px] lg:min-h-[460px]"
+          className={`flex-1 overflow-hidden ${containerClassName}`}
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -68,15 +84,40 @@ const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
             transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
             style={{ willChange: "transform" }}
           >
-            {items.map((item, i) => (
-              <div
-                key={i}
-                className="shrink-0 px-2 h-full"
-                style={{ width: `${100 / actualVisible}%` }}
-              >
-                <div className="h-full">{renderItem(item, i)}</div>
-              </div>
-            ))}
+            {isPaged
+              ? Array.from({ length: pagesCount }).map((_, pageIdx) => {
+                  const pageItems = items.slice(
+                    pageIdx * perPage,
+                    pageIdx * perPage + perPage,
+                  );
+
+                  return (
+                    <div key={pageIdx} className="shrink-0 w-full px-2">
+                      <div
+                        className="grid gap-4"
+                        style={{
+                          gridTemplateColumns: `repeat(${actualVisible}, minmax(0, 1fr))`,
+                          gridTemplateRows: `repeat(${rows}, auto)`,
+                        }}
+                      >
+                        {pageItems.map((item, i) => (
+                          <div key={i}>
+                            {renderItem(item, pageIdx * perPage + i)}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })
+              : items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="shrink-0 px-2 h-full"
+                    style={{ width: `${100 / actualVisible}%` }}
+                  >
+                    <div className="h-full">{renderItem(item, i)}</div>
+                  </div>
+                ))}
           </motion.div>
         </div>
 
@@ -90,7 +131,7 @@ const SharedCarousel = ({ items = [], renderItem, visibleCount = 3 }) => {
       </div>
 
       <div className="flex justify-center gap-1.5 mt-6">
-        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+        {Array.from({ length: pagesCount }).map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}

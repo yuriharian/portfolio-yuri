@@ -6,6 +6,7 @@ export const translations = {
       technologies: "Tecnologias",
       experience: "Experiência",
       projects: "Projetos",
+      corporateProjects: "Projetos Corporativos",
       formation: "Formação",
       contact: "Contato",
     },
@@ -58,7 +59,6 @@ export const translations = {
         "Minha stack combina desenvolvimento front-end, back-end, banco de dados, DevOps e Inteligência Artificial aplicada.",
       frontendTitle: "Interfaces & Experiência",
       backendTitle: "Arquitetura, Dados & IA",
-      back: "Voltar",
     },
 
     experience: {
@@ -74,9 +74,19 @@ export const translations = {
       description:
         "Projetos que representam minha evolução em front-end, back-end, automação e IA aplicada.",
       highlights: "Destaques",
-      more: "Mais cursos",
+      more: "Mais projetos",
       code: "Código",
       viewProject: "Ver projeto",
+    },
+
+    corporateProjects: {
+      title: "Projetos Corporativos",
+      description:
+        "Sistemas internos que desenvolvi ao longo da minha atuação na Iron Mountain, focados em transformar dados operacionais brutos em decisões mais claras e rápidas para a liderança — substituindo relatórios manuais por dashboards e reduzindo o tempo entre um desvio acontecer e alguém agir sobre ele. Em vários deles, o foco foi antecipar problemas antes que virassem crise, com alertas automáticos no lugar de acompanhamento manual constante.",
+      confidentialNotice:
+        "Por política de confidencialidade da empresa, não posso compartilhar código-fonte, links de acesso ou dados reais de operação — apenas o que cada solução resolve.",
+      confidentialBadge: "Uso interno · Confidencial",
+      statusLabel: "Status",
     },
 
     formation: {
@@ -87,6 +97,7 @@ export const translations = {
         "Formação superior que consolida minha base em arquitetura de software, lógica, estruturas de dados, banco de dados e desenvolvimento full-stack.",
       specialization: "Especialização",
       certificateButton: "Ver certificado",
+      more: "Mais cursos",
     },
 
     contact: {
@@ -103,6 +114,7 @@ export const translations = {
       technologies: "Technologies",
       experience: "Experience",
       projects: "Projects",
+      corporateProjects: "Corporate Projects",
       formation: "Education",
       contact: "Contact",
     },
@@ -155,7 +167,6 @@ export const translations = {
         "My stack combines front-end, back-end, databases, DevOps, and applied Artificial Intelligence.",
       frontendTitle: "Interfaces & Experience",
       backendTitle: "Architecture, Data & AI",
-      back: "Back",
     },
 
     experience: {
@@ -171,9 +182,19 @@ export const translations = {
       description:
         "Projects that showcase my growth in front-end, back-end, automation and applied AI.",
       highlights: "Highlights",
-      more: "More courses",
+      more: "More projects",
       code: "Code",
       viewProject: "View project",
+    },
+
+    corporateProjects: {
+      title: "Corporate Projects",
+      description:
+        "Internal systems I built during my time at Iron Mountain, focused on turning raw operational data into clearer, faster decisions for leadership — replacing manual reports with dashboards and shrinking the time between a deviation happening and someone acting on it. In several of them, the goal was to catch problems before they became a crisis, with automatic alerts instead of constant manual follow-up.",
+      confidentialNotice:
+        "Due to the company's confidentiality policy, I can't share source code, access links, or real operational data — just what each solution solves.",
+      confidentialBadge: "Internal Use · Confidential",
+      statusLabel: "Status",
     },
 
     formation: {
@@ -184,6 +205,7 @@ export const translations = {
         "Higher education that consolidates my foundation in software architecture, logic, data structures, databases, and full-stack development.",
       specialization: "Specialization",
       certificateButton: "View certificate",
+      more: "More courses",
     },
 
     contact: {
@@ -200,6 +222,7 @@ export const translations = {
       technologies: "Tecnologías",
       experience: "Experiencia",
       projects: "Proyectos",
+      corporateProjects: "Proyectos Corporativos",
       formation: "Formación",
       contact: "Contacto",
     },
@@ -252,7 +275,6 @@ export const translations = {
         "Mi stack combina desarrollo front-end, back-end, bases de datos, DevOps e Inteligencia Artificial aplicada.",
       frontendTitle: "Interfaces & Experiencia",
       backendTitle: "Arquitectura, Datos & IA",
-      back: "Volver",
     },
 
     experience: {
@@ -268,9 +290,19 @@ export const translations = {
       description:
         "Proyectos que representan mi evolución en front-end, back-end, automatización e IA aplicada.",
       highlights: "Destacados",
-      more: "Más cursos",
+      more: "Más proyectos",
       code: "Código",
       viewProject: "Ver proyecto",
+    },
+
+    corporateProjects: {
+      title: "Proyectos Corporativos",
+      description:
+        "Sistemas internos que desarrollé durante mi actuación en Iron Mountain, enfocados en transformar datos operativos en decisiones más claras y rápidas para el liderazgo — sustituyendo informes manuales por dashboards y reduciendo el tiempo entre una desviación y la acción sobre ella. En varios de ellos, el foco fue anticipar problemas antes de que se convirtieran en una crisis, con alertas automáticas en lugar de seguimiento manual constante.",
+      confidentialNotice:
+        "Por política de confidencialidad de la empresa, no puedo compartir código fuente, enlaces de acceso ni datos reales de operación — solo lo que cada solución resuelve.",
+      confidentialBadge: "Uso interno · Confidencial",
+      statusLabel: "Estado",
     },
 
     formation: {
@@ -281,6 +313,7 @@ export const translations = {
         "Formación superior que consolida mi base en arquitectura de software, lógica, estructuras de datos, bases de datos y desarrollo full-stack.",
       specialization: "Especialización",
       certificateButton: "Ver certificado",
+      more: "Más cursos",
     },
 
     contact: {

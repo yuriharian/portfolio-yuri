@@ -1,8 +1,59 @@
 import { CONTENT } from "../constants";
 import { motion } from "framer-motion";
-import { FiBookOpen, FiAward } from "react-icons/fi";
+import { FiBookOpen, FiAward, FiExternalLink } from "react-icons/fi";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
+import SharedCarousel from "./SharedCarousel";
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const CourseCard = ({ course, t, featured = false }) => {
+  return (
+    <motion.div
+      variants={cardVariants}
+      whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+      className={`group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col ${
+        featured ? "p-6 h-full" : "p-4 h-[190px]"
+      }`}
+    >
+      <div className="flex items-start gap-3 mb-4 flex-1 min-h-0">
+        <FiBookOpen className="text-xl text-blue-500 mt-1 shrink-0" />
+        <div className="min-w-0">
+          <p className="text-sm text-blue-600 dark:text-blue-400 font-bold">
+            {course.year}
+          </p>
+          <h4 className="mt-1 font-bold text-lg text-neutral-900 dark:text-white line-clamp-2">
+            {course.course}
+          </h4>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 truncate">
+            {course.company}
+          </p>
+        </div>
+      </div>
+
+      {course.link && (
+        <a
+          href={course.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto self-start flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-semibold text-white shadow-md hover:scale-105 transition-all duration-300 btn-solid-blue"
+        >
+          <FiAward />
+          {t.formation.certificateButton}
+          <FiExternalLink size={13} />
+        </a>
+      )}
+    </motion.div>
+  );
+};
 
 const Formation = () => {
   const { language } = useLanguage();
@@ -79,70 +130,34 @@ const Formation = () => {
               <div className="flex-1 h-px bg-neutral-200 dark:bg-white/10" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+            >
               {featured.map((course, i) => (
-                <motion.div
-                  key={`featured-course-${i}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  viewport={{ once: true }}
-                  className="group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
-                >
-                  <div className="flex items-start gap-3 mb-4">
-                    <FiBookOpen className="text-xl text-blue-500 mt-1" />
-                    <div>
-                      <p className="text-sm text-blue-600 dark:text-blue-400 font-bold">
-                        {course.year}
-                      </p>
-                      <h4 className="mt-1 font-bold text-lg text-neutral-900 dark:text-white">
-                        {course.course}
-                      </h4>
-                      <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-                        {course.company}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
+                <CourseCard key={`featured-course-${i}`} course={course} t={t} featured />
               ))}
-            </div>
+            </motion.div>
 
             {courses.length > 0 && (
               <div>
                 <div className="flex items-center gap-3 mb-8">
                   <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
-                    {t.projects?.more || "Mais cursos"}
+                    {t.formation.more}
                   </span>
                   <div className="flex-1 h-px bg-neutral-200 dark:bg-white/10" />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {courses.map((course, i) => (
-                    <motion.div
-                      key={`course-${i}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: i * 0.04 }}
-                      viewport={{ once: true }}
-                      className="group rounded-3xl border-2 border-white/60 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
-                    >
-                      <div className="flex items-start gap-3 mb-4">
-                        <FiBookOpen className="text-xl text-blue-500 mt-1" />
-                        <div>
-                          <p className="text-sm text-blue-600 dark:text-blue-400 font-bold">
-                            {course.year}
-                          </p>
-                          <h4 className="mt-1 font-bold text-lg text-neutral-900 dark:text-white">
-                            {course.course}
-                          </h4>
-                          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-                            {course.company}
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                <SharedCarousel
+                  items={courses}
+                  visibleCount={4}
+                  rows={2}
+                  containerClassName="min-h-[420px] md:min-h-[410px]"
+                  renderItem={(course) => <CourseCard course={course} t={t} />}
+                />
               </div>
             )}
           </div>

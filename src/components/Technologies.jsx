@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -53,88 +52,74 @@ const BACKEND_DB_AI = [
   { name: "MongoDB", icon: SiMongodb, color: "#16a34a" },
 ];
 
-const Technologies = () => {
-  const [selectedFront, setSelectedFront] = React.useState(null);
-  const [selectedBack, setSelectedBack] = React.useState(null);
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.04 } },
+};
 
+const iconVariants = {
+  hidden: { opacity: 0, y: 12, scale: 0.9 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35 } },
+};
+
+const TechIcon = ({ tech }) => {
+  const safeColor =
+    tech.name === "Next.js"
+      ? "text-neutral-900 dark:text-white"
+      : tech.name === "Express"
+        ? "text-neutral-700 dark:text-neutral-200"
+        : "";
+
+  return (
+    <motion.div
+      variants={iconVariants}
+      whileHover={{
+        scale: 1.12,
+        y: -6,
+        transition: { type: "spring", stiffness: 300, damping: 15 },
+      }}
+      className="group flex flex-col items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl border-2 p-1 md:p-2 shadow-md bg-white dark:bg-stone-900 border-neutral-200 dark:border-white/10 hover:shadow-xl cursor-default"
+      style={{ borderColor: tech.color }}
+    >
+      <tech.icon
+        className={`text-xl md:text-5xl transition-transform group-hover:scale-110 ${safeColor}`}
+        style={{
+          color:
+            tech.name !== "Next.js" && tech.name !== "Express"
+              ? tech.color
+              : undefined,
+        }}
+      />
+
+      <span className="mt-1 text-xs md:mt-2 md:text-sm font-semibold text-center text-neutral-800 dark:text-neutral-200">
+        {tech.name}
+      </span>
+    </motion.div>
+  );
+};
+
+const Technologies = () => {
   const { language } = useLanguage();
   const t = translations[language] || translations.pt;
 
-  const getSafeColor = (tech) => {
-    if (tech.name === "Next.js") {
-      return "text-neutral-900 dark:text-white";
-    }
-
-    if (tech.name === "Express") {
-      return "text-neutral-700 dark:text-neutral-200";
-    }
-
-    return "";
-  };
-
-  const renderCard = (title, techs, selected, setSelected) => {
+  const renderCard = (title, techs) => {
     return (
       <div className="flex-1 flex flex-col items-center justify-center rounded-3xl shadow-xl p-8 min-h-[380px] border-2 border-neutral-200 dark:border-white/10 bg-white/90 dark:bg-white/5 backdrop-blur-xl transition-all duration-500">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center tracking-tight text-neutral-900 dark:text-white">
           {title}
         </h2>
 
-        {selected ? (
-          <div className="flex flex-col items-center justify-center h-full">
-            <selected.icon
-              className={`text-[7rem] md:text-[8rem] mb-4 ${getSafeColor(
-                selected,
-              )}`}
-              style={{
-                color:
-                  selected.name !== "Next.js" && selected.name !== "Express"
-                    ? selected.color
-                    : undefined,
-                filter: "drop-shadow(0 4px 18px rgba(0,0,0,0.25))",
-              }}
-            />
-
-            <span className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white drop-shadow mb-4 text-center">
-              {selected.name}
-            </span>
-
-            <button
-              className="mt-2 px-5 py-2 rounded-xl font-semibold text-white btn-solid-blue"
-              onClick={() => setSelected(null)}
-            >
-              {t.technologies.back}
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6">
-            {techs.map((tech) => (
-              <button
-                key={tech.name}
-                className="group flex flex-col items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl border-2 p-1 md:p-2 shadow-md bg-white dark:bg-stone-900 border-neutral-200 dark:border-white/10 hover:scale-110 hover:shadow-xl transition-all duration-300"
-                style={{
-                  borderColor: tech.color,
-                }}
-                onClick={() => setSelected(tech)}
-              >
-                <tech.icon
-                  className={`text-xl md:text-5xl transition-transform group-hover:scale-110 ${getSafeColor(
-                    tech,
-                  )}`}
-                  style={{
-                    color:
-                      tech.name !== "Next.js" && tech.name !== "Express"
-                        ? tech.color
-                        : undefined,
-                  }}
-                />
-
-                <span className="mt-1 text-xs md:mt-2 md:text-sm font-semibold text-center text-neutral-800 dark:text-neutral-200">
-                  {tech.name}
-                </span>
-              </button>
-            ))}
-          </div>
-        )}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6"
+        >
+          {techs.map((tech) => (
+            <TechIcon key={tech.name} tech={tech} />
+          ))}
+        </motion.div>
       </div>
     );
   };
@@ -165,19 +150,8 @@ const Technologies = () => {
       </motion.p>
 
       <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8">
-        {renderCard(
-          t.technologies.frontendTitle,
-          FRONTEND_TOOLS,
-          selectedFront,
-          setSelectedFront,
-        )}
-
-        {renderCard(
-          t.technologies.backendTitle,
-          BACKEND_DB_AI,
-          selectedBack,
-          setSelectedBack,
-        )}
+        {renderCard(t.technologies.frontendTitle, FRONTEND_TOOLS)}
+        {renderCard(t.technologies.backendTitle, BACKEND_DB_AI)}
       </div>
     </section>
   );

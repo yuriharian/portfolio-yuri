@@ -30,11 +30,11 @@ export const CONTENT = {
 
     projects: [
       {
-        title: "Smart Catalog",
+        title: "Galaxy",
         placeholder: true,
         description:
-          "Projeto atual em desenvolvimento. Em breve mais detalhes.",
-        technologies: ["React", "Python", "IA"],
+          "Plataforma pessoal de organização e marketing pessoal: mapeia conexões entre pessoas, sistemas e projetos num grafo visual (inspirado no grafo do Obsidian), com análises de rede geradas pela minha própria API de IA. Também vai reunir um quadro de tarefas estilo Kanban, com priorização e análises automatizadas. Ainda em fase de planejamento.",
+        technologies: ["React", "IA", "Grafos", "Kanban"],
         source: "",
         deploy: "",
       },
@@ -100,6 +100,51 @@ export const CONTENT = {
         technologies: ["Dart", "MySQL"],
         source: "",
         deploy: "",
+      },
+    ],
+
+    internalProjects: [
+      {
+        title: "Controle de Operações, Faturamento e Forecast",
+        description:
+          "Plataforma que centraliza o lançamento diário de produção de uma operação de terceirização de processos, calcula a receita automaticamente e compara o resultado com a meta do período, sinalizando desvios em tempo real. A hierarquia de gestão (líder, coordenador, supervisor, gerente e diretoria) enxerga automaticamente sua própria fatia de dados, sem cadastro manual de permissões. Hoje atende dezenas de contas em setores diferentes e está em expansão para atender a operação em nível nacional.",
+        tags: ["Operações", "Faturamento", "Forecast", "Dashboards", "Google Apps Script"],
+        status: "Em produção · em expansão nacional",
+      },
+      {
+        title: "Dashboards de Performance Operacional e Migração de Dados Físicos",
+        description:
+          "Conjunto de painéis para uma operação de grande porte, cobrindo dois fronts: acompanhamento de receita e indicadores por regional comparados à meta, e controle do processo de migração física de documentos e mídias em múltiplos estados, com prazos, status de cada item e comparação automática entre a base própria e os arquivos enviados pelo cliente. Um dos ganhos mais relevantes foi identificar e recuperar receita que antes se perdia por não conseguir ser atribuída corretamente nos relatórios manuais.",
+        tags: ["Business Intelligence", "Dashboards", "Controle de Qualidade", "Google Sheets"],
+        status: "Em produção",
+      },
+      {
+        title: "Painel de Acompanhamento de Produção em Tempo Real",
+        description:
+          "Ferramenta que acompanha em tempo real o ritmo de uma operação de digitalização de documentos, comparando o volume já processado com a meta esperada para aquele momento do turno, não só no fechamento do dia. Cheguei a testar uma integração com IA generativa para gerar as análises e, na prática, optei por um sistema de regras claro e auditável no lugar dela — mais previsível para o contexto operacional.",
+        tags: ["Automação", "Análise de Dados", "Google Apps Script"],
+        status: "Em produção",
+      },
+      {
+        title: "Registro de Atividades e Clima de Equipe",
+        description:
+          "Ferramenta corporativa multilíngue (PT/EN/ES) usada por equipes da própria Iron Mountain em diferentes países para registrar atividades em tempo real e acompanhar o clima da equipe. Detecta automaticamente o nível de acesso de cada pessoa a partir da própria estrutura organizacional, sem cadastro manual de permissões, e já operou sobre estruturas de milhares de pessoas.",
+        tags: ["Multilíngue", "Automação", "Clima Organizacional"],
+        status: "Em produção · uso multinacional",
+      },
+      {
+        title: "Protótipo de Torre de Controle Executiva",
+        description:
+          "Protótipo visual de um painel único pensado para reunir os principais indicadores da empresa — pessoas, operação, financeiro, qualidade e segurança — sem duplicar os sistemas que já existem para cada área. Pensado para apoiar decisões de diretoria e liderança regional, com navegação por mapa geográfico e um modo de apresentação para reuniões. Ainda em fase de planejamento, com dados fictícios.",
+        tags: ["Planejamento", "Visualização de Dados", "UX"],
+        status: "Em planejamento · protótipo",
+      },
+      {
+        title: "Automação de Catalogação Inteligente",
+        description:
+          "Solução interna alternativa a uma ferramenta de catalogação de terceiros, criada para reduzir custos operacionais associados a essa tecnologia sem abrir mão da rastreabilidade dos itens.",
+        tags: ["Automação", "Redução de Custos", "Python", "IA"],
+        status: "Em produção",
       },
     ],
 
@@ -254,11 +299,11 @@ export const CONTENT = {
 
     projects: [
       {
-        title: "Smart Catalog",
+        title: "Galaxy",
         placeholder: true,
         description:
-          "Project currently in development. More details coming soon.",
-        technologies: ["React", "Python", "AI"],
+          "Personal organization and personal-branding platform: it maps connections between people, systems and projects on a visual graph (inspired by Obsidian's graph view), with network analysis generated by my own AI API. It will also bring together a Kanban-style task board with automated prioritization and analytics. Still in the planning stage.",
+        technologies: ["React", "AI", "Graphs", "Kanban"],
         source: "",
         deploy: "",
       },
@@ -324,6 +369,51 @@ export const CONTENT = {
         technologies: ["Dart", "MySQL"],
         source: "",
         deploy: "",
+      },
+    ],
+
+    internalProjects: [
+      {
+        title: "Operations, Billing & Forecast Control",
+        description:
+          "Platform that centralizes daily production entries for a process-outsourcing operation, automatically calculates revenue, and compares the result against the period's target, flagging deviations in real time. The management hierarchy (team lead, coordinator, supervisor, manager, and directors) automatically sees its own slice of the data, with no manual permission setup. It currently supports dozens of accounts across different industries and is expanding to support a nationwide operation.",
+        tags: ["Operations", "Billing", "Forecasting", "Dashboards", "Google Apps Script"],
+        status: "In production · expanding nationwide",
+      },
+      {
+        title: "Operational Performance & Physical Data Migration Dashboards",
+        description:
+          "A set of dashboards for a large-scale operation, covering two fronts: revenue and KPI tracking by region compared against targets, and control of the physical migration of documents and media across multiple states, with deadlines, item-level status, and automatic reconciliation between the internal database and client-submitted files. One of the most relevant wins was identifying and recovering revenue that used to get lost because it couldn't be properly attributed in manual reports.",
+        tags: ["Business Intelligence", "Dashboards", "Quality Control", "Google Sheets"],
+        status: "In production",
+      },
+      {
+        title: "Real-Time Production Tracking Dashboard",
+        description:
+          "A tool that tracks the pace of a document-digitization operation in real time, comparing the volume already processed against the target expected at that point in the shift, not just at day's end. I tested a generative AI integration for generating the analysis and ultimately chose a clear, auditable rules-based system instead — more predictable for the operational context.",
+        tags: ["Automation", "Data Analysis", "Google Apps Script"],
+        status: "In production",
+      },
+      {
+        title: "Activity Logging & Team Climate Tool",
+        description:
+          "A multilingual (PT/EN/ES) corporate tool used by Iron Mountain's own teams across different countries to log activities in real time and track team climate. It automatically detects each person's access level from the organizational structure itself, with no manual permission setup, and has already run on structures of thousands of people.",
+        tags: ["Multilingual", "Automation", "Team Climate"],
+        status: "In production · multinational use",
+      },
+      {
+        title: "Executive Control Tower Prototype",
+        description:
+          "A visual prototype of a single panel meant to bring together a company's core indicators — people, operations, finance, quality and security — without duplicating the systems that already exist for each area. Designed to support leadership and regional director decisions, with map-based navigation and a presentation mode for meetings. Still in the planning stage, using placeholder data.",
+        tags: ["Planning", "Data Visualization", "UX"],
+        status: "In planning · prototype",
+      },
+      {
+        title: "Smart Cataloging Automation",
+        description:
+          "An in-house alternative to a third-party cataloging tool, built to cut the operational costs tied to that technology without giving up item traceability.",
+        tags: ["Automation", "Cost Reduction", "Python", "AI"],
+        status: "In production",
       },
     ],
 
@@ -478,11 +568,11 @@ export const CONTENT = {
 
     projects: [
       {
-        title: "Smart Catalog",
+        title: "Galaxy",
         placeholder: true,
         description:
-          "Proyecto actualmente en desarrollo. Más detalles próximamente.",
-        technologies: ["React", "Python", "IA"],
+          "Plataforma personal de organización y marca personal: mapea conexiones entre personas, sistemas y proyectos en un grafo visual (inspirado en el grafo de Obsidian), con análisis de red generados por mi propia API de IA. También reunirá un tablero de tareas estilo Kanban, con priorización y análisis automatizados. Todavía en fase de planificación.",
+        technologies: ["React", "IA", "Grafos", "Kanban"],
         source: "",
         deploy: "",
       },
@@ -548,6 +638,51 @@ export const CONTENT = {
         technologies: ["Dart", "MySQL"],
         source: "",
         deploy: "",
+      },
+    ],
+
+    internalProjects: [
+      {
+        title: "Control de Operaciones, Facturación y Forecast",
+        description:
+          "Plataforma que centraliza el registro diario de producción de una operación de tercerización de procesos, calcula la facturación automáticamente y compara el resultado con la meta del período, señalando desviaciones en tiempo real. La jerarquía de gestión (líder, coordinador, supervisor, gerente y dirección) ve automáticamente su propia porción de datos, sin configuración manual de permisos. Hoy da soporte a decenas de cuentas en distintos sectores y está en expansión para atender la operación a nivel nacional.",
+        tags: ["Operaciones", "Facturación", "Forecast", "Dashboards", "Google Apps Script"],
+        status: "En producción · en expansión nacional",
+      },
+      {
+        title: "Dashboards de Desempeño Operativo y Migración de Datos Físicos",
+        description:
+          "Conjunto de paneles para una operación de gran escala, que cubre dos frentes: seguimiento de ingresos e indicadores por regional comparados con la meta, y control del proceso de migración física de documentos y medios en varios estados, con plazos, estado de cada ítem y comparación automática entre la base propia y los archivos enviados por el cliente. Uno de los logros más relevantes fue identificar y recuperar ingresos que antes se perdían por no poder atribuirse correctamente en los informes manuales.",
+        tags: ["Business Intelligence", "Dashboards", "Control de Calidad", "Google Sheets"],
+        status: "En producción",
+      },
+      {
+        title: "Panel de Seguimiento de Producción en Tiempo Real",
+        description:
+          "Herramienta que sigue en tiempo real el ritmo de una operación de digitalización de documentos, comparando el volumen ya procesado con la meta esperada para ese momento del turno, no solo al cierre del día. Llegué a probar una integración con IA generativa para generar los análisis y, finalmente, opté por un sistema de reglas claro y auditable en su lugar, más predecible para el contexto operativo.",
+        tags: ["Automatización", "Análisis de Datos", "Google Apps Script"],
+        status: "En producción",
+      },
+      {
+        title: "Registro de Actividades y Clima de Equipo",
+        description:
+          "Herramienta corporativa multilingüe (PT/EN/ES) usada por equipos de la propia Iron Mountain en distintos países para registrar actividades en tiempo real y monitorear el clima del equipo. Detecta automáticamente el nivel de acceso de cada persona a partir de la propia estructura organizacional, sin configuración manual de permisos, y ya operó sobre estructuras de miles de personas.",
+        tags: ["Multilingüe", "Automatización", "Clima Organizacional"],
+        status: "En producción · uso multinacional",
+      },
+      {
+        title: "Prototipo de Torre de Control Ejecutiva",
+        description:
+          "Prototipo visual de un panel único pensado para reunir los principales indicadores de la empresa —personas, operación, finanzas, calidad y seguridad— sin duplicar los sistemas que ya existen para cada área. Pensado para apoyar decisiones de dirección y liderazgo regional, con navegación por mapa geográfico y un modo de presentación para reuniones. Todavía en fase de planificación, con datos ficticios.",
+        tags: ["Planificación", "Visualización de Datos", "UX"],
+        status: "En planificación · prototipo",
+      },
+      {
+        title: "Automatización de Catalogación Inteligente",
+        description:
+          "Solución interna alternativa a una herramienta de catalogación de terceros, creada para reducir los costos operativos asociados a esa tecnología sin renunciar a la trazabilidad de los ítems.",
+        tags: ["Automatización", "Reducción de Costos", "Python", "IA"],
+        status: "En producción",
       },
     ],
 

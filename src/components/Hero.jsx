@@ -1,6 +1,6 @@
 import ProfileAvatar3 from "../assets/Profile_Avatar3.png";
 import ProfileAvatar2 from "../assets/Profile_Avatar2.png";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { TfiDownload } from "react-icons/tfi";
 import { useLanguage } from "../context/LanguageContext";
@@ -11,6 +11,13 @@ const Hero = () => {
   const { language } = useLanguage();
   const [flipped, setFlipped] = useState(false);
   const intervalRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   const t = translations[language] || translations.pt;
   const data = CONTENT[language] || CONTENT.pt;
@@ -39,7 +46,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-10 pb-8 md:py-20 transition-colors duration-500">
+    <section
+      ref={sectionRef}
+      className="relative pt-10 pb-8 md:py-20 transition-colors duration-500"
+    >
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-14 px-2 md:px-8">
         {/* TEXT */}
         <div className="flex-1 flex flex-col items-center md:items-start">
@@ -94,6 +104,7 @@ const Hero = () => {
             initial={{ x: 60, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.2 }}
+            style={{ y: parallaxY }}
             className="relative float"
           >
             <div className="absolute inset-0 rounded-full blur-3xl bg-cyan-400/20 dark:bg-cyan-400/10 scale-110 transition-colors duration-500" />
