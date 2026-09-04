@@ -1,4 +1,4 @@
-import ProfileAvatar3 from "../assets/Profile_Avatar3.png";
+import ProfileAvatar3 from "../assets/Profile_Avatar3.webp";
 import ProfileAvatar2 from "../assets/Profile_Avatar2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
