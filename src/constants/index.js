@@ -144,7 +144,7 @@ export const CONTENT = {
         description:
           "Solução interna alternativa a uma ferramenta de catalogação de terceiros, criada para reduzir custos operacionais associados a essa tecnologia sem abrir mão da rastreabilidade dos itens.",
         tags: ["Automação", "Redução de Custos", "Python", "IA"],
-        status: "Em produção",
+        status: "Em planejamento · protótipo",
       },
     ],
 
@@ -413,7 +413,7 @@ export const CONTENT = {
         description:
           "An in-house alternative to a third-party cataloging tool, built to cut the operational costs tied to that technology without giving up item traceability.",
         tags: ["Automation", "Cost Reduction", "Python", "AI"],
-        status: "In production",
+        status: "In planning · prototype",
       },
     ],
 
@@ -682,7 +682,7 @@ export const CONTENT = {
         description:
           "Solución interna alternativa a una herramienta de catalogación de terceros, creada para reducir los costos operativos asociados a esa tecnología sin renunciar a la trazabilidad de los ítems.",
         tags: ["Automatización", "Reducción de Costos", "Python", "IA"],
-        status: "En producción",
+        status: "En planificación · prototipo",
       },
     ],
 
